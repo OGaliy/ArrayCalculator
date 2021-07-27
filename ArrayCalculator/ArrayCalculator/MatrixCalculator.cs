@@ -1,33 +1,41 @@
-﻿namespace ArrayCalculator
+﻿namespace MatrixCalculateLibrary
 {
     public static class MatrixCalculator
     {
         /// <summary>
-        /// Multiplies two double matrix.
-        /// For correct result count of columns matrix A
-        /// should be same as count of rows matrix B
+        /// Calculates cofactor matrix.
         /// </summary>
-        /// <param name="a">First matrix</param>
-        /// <param name="b">Second matrix</param>
-        /// <returns>Result of multiply</returns>
-        public static double[,] Multiply(double[,] a, double[,] b)
+        /// <param name="rowIndex">Index of row element(starts from 0)</param>
+        /// <param name="columnIndex">Index of column element(starts from 0)</param>
+        /// <param name="matrix">Input matrix</param>
+        /// <returns>Cofactor matrix</returns>
+        public static double[,] CalculateCofactorMatrix(int rowIndex, int columnIndex, double[,] matrix)
         {
-            var rows = a.GetLength(0);
-            var columns = b.GetLength(1);
+            int r = 0;
+            int length = matrix.GetLength(0);
 
-            double[,] result = new double[rows, columns];
-
-            for (int r = 0; r < rows; r++)
+            if (length != matrix.GetLength(1))
             {
-                for (int c = 0; c < columns; c++)
-                {
-                    double element = 0;
-                    for (int i = 0; i < a.GetLength(1); i++)
-                    {
-                        element += a[r, i] * b[i, c];
-                    }
+                throw new MatrixExeption(Constants.NotSquareException);
+            }
 
-                    result[r, c] = element;
+            double[,] result = new double[length - 1, length - 1];
+
+            for (int i = 0; i < length; i++)
+            {
+                int c = 0;
+
+                for (int j = 0; j < length; j++)
+                {
+                    if (i != rowIndex && j != columnIndex)
+                    {
+                        result[r, c] = matrix[i, j];
+                        c++;
+                    }
+                }
+                if (i != rowIndex)
+                {
+                    r++;
                 }
             }
 
@@ -35,31 +43,26 @@
         }
 
         /// <summary>
-        /// Multiplies two int matrix.
-        /// For correct result count of columns matrix A
-        /// should be same as count of rows matrix B
+        /// Calculates transpose matrix.
         /// </summary>
-        /// <param name="a">First matrix</param>
-        /// <param name="b">Second matrix</param>
-        /// <returns>Result of multiply</returns>
-        public static int[,] Multiply(int[,] a, int[,] b)
+        /// <param name="matrix">Input matrix</param>
+        /// <returns>Transposed matrix</returns>
+        public static double[,] CalculateTransposeMatrix(double[,] matrix)
         {
-            var rows = a.GetLength(0);
-            var columns = b.GetLength(1);
+            int length = matrix.GetLength(0);
 
-            int[,] result = new int[rows, columns];
-
-            for (int r = 0; r < rows; r++)
+            if (length != matrix.GetLength(1))
             {
-                for (int c = 0; c < columns; c++)
-                {
-                    int element = 0;
-                    for (int i = 0; i < a.GetLength(1); i++)
-                    {
-                        element += a[r, i] * b[i, c];
-                    }
+                throw new MatrixExeption(Constants.NotSquareException);
+            }
 
-                    result[r, c] = element;
+            double[,] result = new double[length, length];
+
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    result[j, i] = matrix[i, j];
                 }
             }
 
