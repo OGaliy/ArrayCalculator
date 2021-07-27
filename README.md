@@ -1,1 +1,1 @@
-# ArrayCalculator
+# Matrix Calculator
