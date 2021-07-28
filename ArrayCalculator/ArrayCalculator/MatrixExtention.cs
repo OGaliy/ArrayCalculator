@@ -1,4 +1,6 @@
-﻿namespace MatrixCalculateLibrary
+﻿using System;
+
+namespace MatrixCalculateLibrary
 {
     public static class MatrixExtention
     {
@@ -33,7 +35,7 @@
         /// <returns>Cofactor matrix</returns>
         public static double[,] CofactorMatrix(this double[,] matrix, int rowIndex, int columnIndex)
         {
-            return MatrixCalculator.CalculateCofactorMatrix(rowIndex, columnIndex, matrix);
+            return MatrixCalculator.CalculateElementCofactor(rowIndex, columnIndex, matrix);
         }
 
         /// <summary>
@@ -45,7 +47,7 @@
         /// <returns>Cofactor matrix</returns>
         public static int[,] CofactorMatrix(this int[,] matrix, int rowIndex, int columnIndex)
         {
-            return MatrixCalculator.CalculateCofactorMatrix(rowIndex, columnIndex, matrix);
+            return MatrixCalculator.CalculateElementCofactor(rowIndex, columnIndex, matrix);
         }
 
         /// <summary>
@@ -110,6 +112,19 @@
         public static int[,] Multiply(this int[,] a, int[,] b)
         {
             return MultiplyMatrixCalculator.Multiply(a, b);
+        }
+
+        public static double[,] Round(this double[,] matrix, int number)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = Math.Round(matrix[i, j], number);
+                }
+            }
+
+            return matrix;
         }
 
         /// <summary>

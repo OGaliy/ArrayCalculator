@@ -32,7 +32,7 @@ namespace MatrixCalculateLibrary
             {
                 for (int j = 0; j < length; j++)
                 {
-                    var cofMat = MatrixCalculator.CalculateCofactorMatrix(i, j, matrix);
+                    var cofMat = MatrixCalculator.CalculateElementCofactor(i, j, matrix);
 
                     // Need it for correct coeficient
                     cofactorMatrix[i, j] = cofMat.GetLength(0) == 2
@@ -45,7 +45,7 @@ namespace MatrixCalculateLibrary
 
             result = MultiplyMatrixCalculator.MultiplyToNumber((1 / determinant), transposeMatrix);
 
-            return result;
+            return result.Round(2);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace MatrixCalculateLibrary
             {
                 for (int j = 0; j < length; j++)
                 {
-                    var cofMat = MatrixCalculator.CalculateCofactorMatrix(i, j, matrix);
+                    var cofMat = MatrixCalculator.CalculateElementCofactor(i, j, matrix);
 
                     // Need it for correct coeficient
                     cofactorMatrix[i, j] = cofMat.GetLength(0) == 2

@@ -52,6 +52,11 @@
             var rows = a.GetLength(0);
             var columns = b.GetLength(1);
 
+            if (a.GetLength(1) != b.GetLength(0))
+            {
+                throw new MatrixExeption(Constants.MultiplyException);
+            }
+
             int[,] result = new int[rows, columns];
 
             for (int r = 0; r < rows; r++)

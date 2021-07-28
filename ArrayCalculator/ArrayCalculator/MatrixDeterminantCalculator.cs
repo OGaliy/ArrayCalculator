@@ -24,7 +24,7 @@ namespace MatrixCalculateLibrary
             {
                 for (int i = 0; i < length; i++)
                 {
-                    result += Math.Pow(-1, (i + row + 2)) * matrix[row, i] * CalculateDeterminant(row, MatrixCalculator.CalculateCofactorMatrix(row, i, matrix));
+                    result += Math.Pow(-1, (i + row + 2)) * matrix[row, i] * CalculateDeterminant(row, MatrixCalculator.CalculateElementCofactor(row, i, matrix));
                 }
 
                 return result;
@@ -59,7 +59,7 @@ namespace MatrixCalculateLibrary
             {
                 for (int i = 0; i < length; i++)
                 {
-                    result += (int)Math.Pow(-1, (i + row + 2)) * matrix[row, i] * CalculateDeterminant(row, MatrixCalculator.CalculateCofactorMatrix(row, i, matrix));
+                    result += (int)Math.Pow(-1, (i + row + 2)) * matrix[row, i] * CalculateDeterminant(row, MatrixCalculator.CalculateElementCofactor(row, i, matrix));
                 }
 
                 return result;
