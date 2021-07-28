@@ -27,30 +27,6 @@ namespace MatrixCalculateLibrary
         }
 
         /// <summary>
-        /// Calculates cofactor matrix.
-        /// </summary>
-        /// <param name="rowIndex">Index of row element(starts from 0)</param>
-        /// <param name="columnIndex">Index of column element(starts from 0)</param>
-        /// <param name="matrix">Input matrix</param>
-        /// <returns>Cofactor matrix</returns>
-        public static double[,] CofactorMatrix(this double[,] matrix, int rowIndex, int columnIndex)
-        {
-            return MatrixCalculator.CalculateElementCofactor(rowIndex, columnIndex, matrix);
-        }
-
-        /// <summary>
-        /// Calculates cofactor matrix.
-        /// </summary>
-        /// <param name="rowIndex">Index of row element(starts from 0)</param>
-        /// <param name="columnIndex">Index of column element(starts from 0)</param>
-        /// <param name="matrix">Input matrix</param>
-        /// <returns>Cofactor matrix</returns>
-        public static int[,] CofactorMatrix(this int[,] matrix, int rowIndex, int columnIndex)
-        {
-            return MatrixCalculator.CalculateElementCofactor(rowIndex, columnIndex, matrix);
-        }
-
-        /// <summary>
         /// Calculates determinant for double matrix.
         /// </summary>
         /// <param name="matrix">Input matrix</param>
@@ -70,6 +46,30 @@ namespace MatrixCalculateLibrary
         public static int Determinant(this int[,] matrix, int row)
         {
             return MatrixDeterminantCalculator.CalculateDeterminant(row, matrix);
+        }
+
+        /// <summary>
+        /// Calculates cofactor matrix.
+        /// </summary>
+        /// <param name="rowIndex">Index of row element(starts from 0)</param>
+        /// <param name="columnIndex">Index of column element(starts from 0)</param>
+        /// <param name="matrix">Input matrix</param>
+        /// <returns>Cofactor matrix</returns>
+        public static double[,] ElementCofactor(this double[,] matrix, int rowIndex, int columnIndex)
+        {
+            return MatrixCalculator.CalculateElementCofactor(rowIndex, columnIndex, matrix);
+        }
+
+        /// <summary>
+        /// Calculates cofactor matrix.
+        /// </summary>
+        /// <param name="rowIndex">Index of row element(starts from 0)</param>
+        /// <param name="columnIndex">Index of column element(starts from 0)</param>
+        /// <param name="matrix">Input matrix</param>
+        /// <returns>Cofactor matrix</returns>
+        public static int[,] ElementCofactor(this int[,] matrix, int rowIndex, int columnIndex)
+        {
+            return MatrixCalculator.CalculateElementCofactor(rowIndex, columnIndex, matrix);
         }
 
         /// <summary>
@@ -93,14 +93,36 @@ namespace MatrixCalculateLibrary
         }
 
         /// <summary>
+        /// Multiplies double matrix to matrix.
+        /// </summary>
+        /// <param name="a">First matrix</param>
+        /// <param name="b">Secont matrix</param>
+        /// <returns>Result of multiply</returns>
+        public static double[,] Multiply(this double[,] a, double[,] b)
+        {
+            return MultiplyMatrixCalculator.Multiply(a, b);
+        }
+
+        /// <summary>
+        /// Multiplies int matrix to matrix.
+        /// </summary>
+        /// <param name="a">First matrix</param>
+        /// <param name="b">Secont matrix</param>
+        /// <returns>Result of multiply</returns>
+        public static int[,] Multiply(this int[,] a, int[,] b)
+        {
+            return MultiplyMatrixCalculator.Multiply(a, b);
+        }
+
+        /// <summary>
         /// Multiplies double matrix to number.
         /// </summary>
         /// <param name="number">Number for multiply</param>
         /// <param name="matrix">Input matrix</param>
         /// <returns>Result of multiply</returns>
-        public static double[,] Multiply(this double[,] a, double[,] b)
+        public static double[,] MultiplyToNumber(this double[,] matrix, double number)
         {
-            return MultiplyMatrixCalculator.Multiply(a, b);
+            return MultiplyMatrixCalculator.MultiplyToNumber(number, matrix);
         }
 
         /// <summary>
@@ -109,9 +131,9 @@ namespace MatrixCalculateLibrary
         /// <param name="number">Number for multiply</param>
         /// <param name="matrix">Input matrix</param>
         /// <returns>Result of multiply</returns>
-        public static int[,] Multiply(this int[,] a, int[,] b)
+        public static int[,] MultiplyToNumber(this int[,] matrix, int number)
         {
-            return MultiplyMatrixCalculator.Multiply(a, b);
+            return MultiplyMatrixCalculator.MultiplyToNumber(number, matrix);
         }
 
         public static double[,] Round(this double[,] matrix, int number)
