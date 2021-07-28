@@ -1,107 +1,105 @@
-<p align="center">
-  <h2>A&A</h2>
-</p>
-<p align="center">
-## Matrix Calculator
-</p>
+<h1 align="center">A&A</h1>
 
-## What鈥檚 In This Document
+# Matrix Calculator
 
-- [How to connect in your app](#-how-to-connect-in-your-app)
-- [How to use in code](#-how-to-use-in-code)
-- [Code examples](#-code-examples)
+# What In This Document
 
-## How to connect in your app
+- [What In This Document](#what-in-this-document)
+- [How to connect in your app](#how-to-connect-in-your-app)
+- [How to use in code](#how-to-use-in-code)
+- [Code examples](#code-examples)
+
+# How to connect in your app
 
 1. Download as zip.
 2. Open and build solution.
 3. In your project add reference to **MatrixCalculateLibrary.dll**
 
-## How to use in code
+# How to use in code
 
 **Add using to list**
 
-	```using MatrixCalculateLibrary;```
+	using MatrixCalculateLibrary;
 	
-## Code examples
+# Code examples
 
 **Create matrix(array)**
-
-	```double[,] A = new double[3, 3]
-		{
-			{ 3, 0, 2 },
-			{ 2, 0, -2 },
-			{ 0, 1, 1 }
-		};
-		double[,] B = new double[3, 3]
-		{
-			{ 3, -1, 2 },
-            { 1, 0, 3 },
-            { 2, -1, 0 }
-		};```
+	
+	double[,] A = new double[3, 3]
+	{
+		{ 3, 0, 2 },
+		{ 2, 0, -2 },
+		{ 0, 1, 1 }
+	};
+	double[,] B = new double[3, 3]
+	{
+		{ 3, -1, 2 },
+        	{ 1, 0, 3 },
+        	{ 2, -1, 0 }
+	};
 		
 In examples we will use the A and the B matrixies.
 
 **Matrix sum**
 
-	```var result = BasicMatrixArithmetic.Add(a, b);```
+	var result = BasicMatrixArithmetic.Add(a, b);
 	
-	or
+or
 	
-	```var result = A.Add(B);```
+	var result = A.Add(B);
 
 **Matrix subtract**
 
-	```var result = BasicMatrixArithmetic.Subtract(a, b);```
+	var result = BasicMatrixArithmetic.Subtract(a, b);
 	
-	or
+or
 	
-	```var result = A.Subtract(B);```
+	var result = A.Subtract(B);
 		
 **Matrix inverting**
 
-	```var result = InvertMatrixCalculator.CalculateInvertMatrix(A);```
+	var result = InvertMatrixCalculator.CalculateInvertMatrix(A);
 	
-	or
+or
 	
-	```var result = A.Invert();```
+	var result = A.Invert();
 	
 **Matrix element cofactor**
 
-	```var result = MatrixCalculator.CalculateElementCofactor(0, 0, A);```
+	var result = MatrixCalculator.CalculateElementCofactor(0, 0, A);
 	
-	or
+or
 	
-	```var result = A.ElementCofactor(0, 0);```
+	var result = A.ElementCofactor(0, 0);
 	
 **Matrix transpose**
 
-	```var result = MatrixCalculator.CalculateTransposeMatrix(A);```
+	var result = MatrixCalculator.CalculateTransposeMatrix(A);
 	
-	or
+or
 	
-	```var result = A.TransposeMatrix();```
+	var result = A.TransposeMatrix();
 	
 **Matrix determinant**
 
-	```var result = MatrixDeterminantCalculator.CalculateDeterminant(0, A);```
+	var result = MatrixDeterminantCalculator.CalculateDeterminant(0, A);
 	
-	or
+or
 	
-	```var result = A.Determinant(0);```
+	var result = A.Determinant(0);
 	
 **Matrix multiply**
 
-	```var result = MultiplyMatrixCalculator.Multiply(A, B);```
+	var result = MultiplyMatrixCalculator.Multiply(A, B);
 	
-	or
+or
 	
-	```var result = A.Multiply(B);```
+	var result = A.Multiply(B);
 
 **Matrix multiply on number**
 
-	```var result = MultiplyMatrixCalculator.MultiplyToNumber(A, B);```
+	var result = MultiplyMatrixCalculator.MultiplyToNumber(A, B);
 	
-	or
+or
 	
-	```var result = A.MultiplyToNumber(5);```
+	var result = A.MultiplyToNumber(5);
