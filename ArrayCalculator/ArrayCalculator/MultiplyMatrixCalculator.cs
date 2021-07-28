@@ -3,50 +3,6 @@
     public static class MultiplyMatrixCalculator
     {
         /// <summary>
-        /// Multiplies double matrix to number.
-        /// </summary>
-        /// <param name="number">Number for multiply</param>
-        /// <param name="matrix">Input matrix</param>
-        /// <returns>Result of multiply</returns>
-        public static double[,] MultiplyToNumber(double number, double[,] matrix)
-        {
-            int rows = matrix.GetLength(0);
-            int columns = matrix.GetLength(1);
-
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    matrix[i, j] *= number;
-                }
-            }
-
-            return matrix;
-        }
-
-        /// <summary>
-        /// Multiplies int matrix to number.
-        /// </summary>
-        /// <param name="number">Number for multiply</param>
-        /// <param name="matrix">Input matrix</param>
-        /// <returns>Result of multiply</returns>
-        public static int[,] MultiplyToNumber(int number, int[,] matrix)
-        {
-            int rows = matrix.GetLength(0);
-            int columns = matrix.GetLength(1);
-
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    matrix[i, j] *= number;
-                }
-            }
-
-            return matrix;
-        }
-
-        /// <summary>
         /// Multiplies two double matrix.
         /// For correct result count of columns matrix A
         /// should be same as count of rows matrix B.
@@ -113,6 +69,50 @@
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Multiplies double matrix to number.
+        /// </summary>
+        /// <param name="number">Number for multiply</param>
+        /// <param name="matrix">Input matrix</param>
+        /// <returns>Result of multiply</returns>
+        public static double[,] MultiplyToNumber(double number, double[,] matrix)
+        {
+            int rows = matrix.GetLength(0);
+            int columns = matrix.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    matrix[i, j] *= number;
+                }
+            }
+
+            return matrix;
+        }
+
+        /// <summary>
+        /// Multiplies int matrix to number.
+        /// </summary>
+        /// <param name="number">Number for multiply</param>
+        /// <param name="matrix">Input matrix</param>
+        /// <returns>Result of multiply</returns>
+        public static int[,] MultiplyToNumber(int number, int[,] matrix)
+        {
+            int rows = matrix.GetLength(0);
+            int columns = matrix.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    matrix[i, j] *= number;
+                }
+            }
+
+            return matrix;
         }
     }
 }
