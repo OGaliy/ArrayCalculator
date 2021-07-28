@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ArrayCalculator\MatrixCalculateLibrary.csproj" />
+    <ProjectReference Include="..\MatrixCalculator\MatrixCalculateLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>
