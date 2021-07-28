@@ -6,5 +6,10 @@
         {
             return MultiplyMatrixCalculator.Multiply(a, b);
         }
+
+        public static double[,] Invert(this double[,] a)
+        {
+            return InvertMatrixCalculator.CalculateInvertMatrix(a);
+        }
     }
 }
