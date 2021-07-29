@@ -15,6 +15,10 @@
 2. Open and build solution.
 3. In your project add reference to **MatrixCalculateLibrary.dll**
 
+Or just install nuget package:
+	
+	Install-Package AandA.MatrixCalculateLibrary -Version 1.0.0
+
 # How to use in code
 
 **Add using to list**
