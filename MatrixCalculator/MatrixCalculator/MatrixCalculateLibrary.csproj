@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Company>A&amp;A</Company>
+    <Authors>AlexGaliy</Authors>
+    <PackageId>A&amp;A.MatrixCalculateLibrary</PackageId>
+    <Description>Library for calculating some matrix operations.
+Can calculate sum, multiply, invert and some other operations. Please look to the git repository for details.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/OGaliy/MatrixCalculator</RepositoryUrl>
+    <PackageTags>Calculating, Calculate, Matrix, Matrix multiply, Invert matrix, Matrix subtract, Matrix sum</PackageTags>
   </PropertyGroup>
 
 </Project>
