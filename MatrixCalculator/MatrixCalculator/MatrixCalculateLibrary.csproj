@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Company>A&amp;A</Company>
     <Authors>AlexGaliy</Authors>
-    <PackageId>A&amp;A.MatrixCalculateLibrary</PackageId>
+    <PackageId>AandA.MatrixCalculateLibrary</PackageId>
     <Description>Library for calculating some matrix operations.
 Can calculate sum, multiply, invert and some other operations. Please look to the git repository for details.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
