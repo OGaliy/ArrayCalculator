@@ -169,7 +169,51 @@ namespace MatrixCalculateLibrary
         public static int[,] Subtract(this int[,] a, int[,] b)
         {
             return BasicMatrixArithmetic.Subtract(a, b);
-        }    
+        }
+
+        /// <summary>
+        /// Creates string view for input matrix.
+        /// </summary>
+        /// <param name="matrix">Input matrix</param>
+        /// <returns>String view</returns>
+        public static string ToMatrixString(this double[,] matrix)
+        {
+            string result = "";
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    result += $"{matrix[i, j]} \t";
+                }
+
+                result += "\n";
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Creates string view for input matrix.
+        /// </summary>
+        /// <param name="matrix">Input matrix</param>
+        /// <returns>String view</returns>
+        public static string ToMatrixString(this int[,] matrix)
+        {
+            string result = "";
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    result += $"{matrix[i, j]} \t";
+                }
+
+                result += "\n";
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Calculates transpose matrix.
