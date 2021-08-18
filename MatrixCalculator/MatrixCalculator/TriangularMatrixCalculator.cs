@@ -9,8 +9,9 @@ namespace MatrixCalculateLibrary
         /// </summary>
         /// <param name="matrix">Input matrix</param>
         /// <param name="roundIndex">Number for matrix elements round</param>
+        /// <param name="shouldSort">Should we sort elements on every iteration</param>
         /// <returns>Triangular matrix</returns>
-        public static double[,] CalculateTriangularMatrix(double[,] matrix, int roundIndex)
+        public static double[,] CalculateTriangularMatrix(double[,] matrix, int roundIndex, bool shouldSort)
         {
             int index = 0;
             int rowLength = matrix.GetLength(0);
@@ -18,20 +19,23 @@ namespace MatrixCalculateLibrary
 
             while (index < columnLength - 1)
             {
-                if (index < columnLength - 2)
+                if (shouldSort && index < columnLength - 2)
                 {
                     SortByRowMaxValue(matrix, index);
                 }
 
-                for (int i = rowLength - 1; i >= index; i--)
+                for (int i = rowLength - 2; i >= index; i--)
                 {
                     double multiplier = matrix[i + 1, index] / matrix[i, index];
 
                     for (int j = index; j < columnLength; j++)
                     {
-                        matrix[i + 1, j] = Math.Round(multiplier * matrix[i + 1, j], 2);
+                        matrix[i + 1, j] -= multiplier * matrix[i, j];
+                        matrix[i + 1, j] = Math.Round(matrix[i + 1, j], roundIndex);
                     }
                 }
+
+                index++;
             }
 
             return matrix;
